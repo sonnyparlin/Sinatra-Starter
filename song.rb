@@ -45,6 +45,7 @@ get '/songs/new' do
 end
 
 post '/songs' do
+  protected!
   song = Song.create(params[:song])
   flash[:notice] = "Song successfully added" if create_song
   redirect to("/songs/#{song.id}")

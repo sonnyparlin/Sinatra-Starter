@@ -8,11 +8,11 @@ html lang="en"
 		header
 			h1 == @title || "Frank Sinatra"
 			== slim :nav
-    section
+		section
 			== styled_flash
-    		== yield
-			footer
-				- if authorized?
-			 		a href="/logout" log out
-				- else
-			 		a href="/login" log in
+    	== yield
+		footer
+			- if authorized?
+				a href="/logout" log out
+			- else
+				a href="/login" log in
