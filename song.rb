@@ -39,6 +39,7 @@ get '/songs' do
 end
 
 get '/songs/new' do
+  protected!
   @song = Song.new
   slim :new_song
 end
@@ -50,7 +51,7 @@ post '/songs' do
 end
 
 get '/songs/:id/edit' do
-  halt(401,'Not Authorized') unless session[:admin] 
+  protected!
   @song = find_song
   slim :edit_song
 end
@@ -61,7 +62,7 @@ get '/songs/:id' do
 end
 
 put '/songs/:id' do
-  halt(401,'Not Authorized') unless session[:admin] 
+  protected!
   song = find_song
   if song.update(params[:song])
       flash[:notice] = "Song successfully updated"
@@ -71,7 +72,7 @@ put '/songs/:id' do
 end
 
 delete '/songs/:id' do
-  halt(401,'Not Authorized') unless session[:admin] 
+  protected!
   if find_song.destroy
       flash[:notice] = "Song deleted"
     end

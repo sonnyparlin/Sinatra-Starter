@@ -1,10 +1,12 @@
 require 'sinatra'
 require 'sinatra/reloader' if settings.development?
+require 'bundler/setup'
 require 'slim'
 require 'sass'
 require './song'
 require 'sinatra/flash'
 require 'pony'
+require './sinatra/auth'
 
 configure do
   enable :sessions
@@ -81,24 +83,6 @@ get '/environment' do
   else
     "Who knows what environment you're in!"
   end
-end
-
-get '/login' do
-  slim :login
-end
-
-post '/login' do
-  if params[:username] == settings.username && params[:password] == settings.password
-    session[:admin] = true
-    redirect to('/songs')
-  else
-    slim :login
-  end
-end
-
-get '/logout' do
-  session.clear
-  redirect to('/login')
 end
 
 post '/contact' do
