@@ -12,3 +12,5 @@ gem "dm-sqlite-adapter", :group => :development
 gem "sinatra-flash"
 gem "sinatra-contrib"
 gem "pony"
+gem "coffee-script"
+gem "therubyracer"
