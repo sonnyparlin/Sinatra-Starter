@@ -110,7 +110,7 @@ end
 def send_message
   Pony.mail(
     :from => params[:name] + "<" + params[:email] + ">",
-    :to => 'daz@gmail.com',
+    :to => 'sonnyparlin@gmail.com',
     :subject => params[:name] + " has contacted you",
     :body => params[:message],
     :port => '587',
