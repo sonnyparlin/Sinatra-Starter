@@ -1,6 +1,6 @@
 require 'dm-core'
 require 'dm-migrations'
-require 'dm-sqlite-adapter'
+require 'dm-sqlite-adapter' if development?
 
 class Song
   include DataMapper::Resource
