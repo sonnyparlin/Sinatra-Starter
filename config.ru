@@ -1,2 +1,7 @@
+require 'sinatra/base'
+
 require './main'
-run Sinatra::Application
+require './song'
+
+map('/songs') { run SongController }
+map('/') { run Website }

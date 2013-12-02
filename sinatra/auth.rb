@@ -1,10 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/flash'
-require 'sinatra/extension'
 
 module Sinatra
-  
-  Auth = Sinatra::Extension.new do
+  module Auth
     module Helpers
       def authorized?
         session[:admin] 
@@ -23,7 +21,7 @@ module Sinatra
       app.set :username => 'frank',
               :password => 'sinatra'
 
-      app.get '/login' do(12)
+      app.get '/login' do
         slim :login
       end
 

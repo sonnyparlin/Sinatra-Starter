@@ -47,15 +47,17 @@ nav {
   font-weight: bold;
 }
 
-nav a.current {
-  background: lighten($black, 5%);
-}
-
 p {
   font: 13px/1.4 $main-font;
 }
 
-label { display: block; }
+label {
+  display: block;
+}
+
+nav a.current {
+  background: lighten($black, 5%);
+}
 
 .flash {
   width: 600px;

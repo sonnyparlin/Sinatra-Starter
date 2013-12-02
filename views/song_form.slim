@@ -6,5 +6,4 @@ label for="released_on" Date(mm/dd/yyyy):
 input#released_on type="text" name="song[released_on]" value="#{@song.released_on.strftime("%m/%d/%Y") if @song.released_on}"
 label for="lyrics" Lyrics:
 textarea#lyrics name="song[lyrics]" == @song.lyrics
-br
 input type="submit" value="Save Song"
