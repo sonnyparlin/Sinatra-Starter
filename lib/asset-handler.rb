@@ -1,9 +1,9 @@
 class AssetHandler < Sinatra::Base
   configure do
-    set :views, File.dirname(__FILE__) + '/assets'
-    set :jsdir, 'js'
-    set :cssdir, 'css'
+    set :root, File.expand_path('../../',__FILE__)
+    set :views, settings.root + '/assets'
     enable :coffeescript
+    set :jsdir, 'js'
   end
   
   get '/javascripts/*.js' do
