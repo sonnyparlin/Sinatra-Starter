@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'dm-core'
 require 'dm-migrations'
-require 'slim'
+require 'erb'
 require 'sass'
 require 'sinatra/flash'
 require './sinatra/auth'
@@ -78,24 +78,24 @@ class SongController < Sinatra::Base
   
   get '/' do
     find_songs
-    slim :songs
+    erb :songs
   end
   
   get '/new' do
     protected!
     @song = Song.new
-    slim :new_song
+    erb :new_song
   end
   
   get '/:id' do
     @song = find_song
-    slim :show_song
+    erb :show_song
   end
   
   get '/:id/edit' do
     protected!
     @song = find_song
-    slim :edit_song
+    erb :edit_song
   end
   
   post '/' do
@@ -129,6 +129,6 @@ class SongController < Sinatra::Base
     @song.likes = @song.likes.next
     @song.save
     redirect to("/#{@song.id}") unless request.xhr?
-    slim :like, :layout => false
+    erb :like, :layout => false
   end
 end

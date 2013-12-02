@@ -1,6 +1,6 @@
 source :rubygems
 gem "sinatra"
-gem "slim"
+gem "erb"
 gem "sass"
 gem "dm-core"
 gem "dm-migrations"

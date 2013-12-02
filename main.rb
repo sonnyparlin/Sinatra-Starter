@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'slim'
+require 'erb'
 require 'sass'
 require 'sinatra/flash'
 require 'pony'
@@ -72,20 +72,20 @@ class Website < Sinatra::Base
   end
 
   get '/' do
-    slim :home
+    erb :home
   end
   
   get '/about' do
     @title = "All About This Website"
-    slim :about
+    erb :about
   end
   
   get '/contact' do
-    slim :contact
+    erb :contact
   end
   
   not_found do
-    slim :not_found
+    erb :not_found
   end
   
   post '/contact' do

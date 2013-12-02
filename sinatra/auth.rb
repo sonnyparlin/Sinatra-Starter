@@ -9,7 +9,7 @@ module Sinatra
       end
 
       def protected!
-        halt 401,slim(:unauthorized) unless authorized?
+        halt 401,erb(:unauthorized) unless authorized?
       end
     end
 
@@ -22,7 +22,7 @@ module Sinatra
               :password => 'sinatra'
 
       app.get '/login' do
-        slim :login
+        erb :login
       end
 
       app.post '/login' do

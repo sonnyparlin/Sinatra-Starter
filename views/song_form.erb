@@ -1,0 +1,9 @@
+<label for="title">Title:</label>
+<input id="title" name="song[title]" type="text" value="<%= @song.title %>" />
+<label for="length">Length:</label>
+<input id="length" name="song[length]" type="number" value="<%= @song.length %>" />
+<label for="released_on">Date(mm/dd/yyyy):</label>
+<input id="released_on" name="song[released_on]" type="text" value="<%= @song.released_on.strftime("%m/%d/%Y") if @song.released_on %>" />
+<label for="lyrics">Lyrics:</label>
+<textarea id="lyrics" name="song[lyrics]"><%= @song.lyrics %>
+</textarea><input type="submit" value="Save Song" />
