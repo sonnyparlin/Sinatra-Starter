@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'erb'
-require 'sass'
 require 'sinatra/flash'
 require 'pony'
 require './sinatra/auth'
