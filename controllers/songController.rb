@@ -2,7 +2,7 @@ class SongController < ApplicationController
   enable :method_override
 
   helpers SongHelpers
-  
+
   before do
     set_title
   end
