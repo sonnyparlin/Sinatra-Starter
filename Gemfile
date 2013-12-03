@@ -15,3 +15,6 @@ gem "dm-sqlite-adapter", :group => :development
 gem "coffee-script"
 gem "therubyracer"
 gem 'bowtie'
+gem "rack-flash3"
+gem 'sinatra-authentication'
+gem 'haml'

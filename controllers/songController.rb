@@ -29,7 +29,7 @@ class SongController < ApplicationController
   end
   
   get '/new' do
-    protected!
+    login_required
     @song = Song.new
     erb :new_song
   end
@@ -40,13 +40,11 @@ class SongController < ApplicationController
   end
   
   get '/:id/edit' do
-    protected!
     @song = find_song
     erb :edit_song
   end
   
   post '/' do
-    protected!
     create_song
     if create_song
       flash[:notice] = "Song successfully added"
@@ -55,7 +53,6 @@ class SongController < ApplicationController
   end
   
   put '/:id' do
-    protected!
     song = find_song
     if song.update(params[:song])
       flash[:notice] = "Song successfully updated"
@@ -64,7 +61,6 @@ class SongController < ApplicationController
   end
   
   delete '/:id' do
-    protected!
     if find_song.destroy
       flash[:notice] = "Song deleted"
     end

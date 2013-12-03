@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require "bundler/setup"
 require 'dm-core'
 require 'bowtie'
 
@@ -10,3 +11,6 @@ map '/admin' do
   BOWTIE_AUTH = {:user => 'admin', :pass => '12345'}
   run Bowtie::Admin
 end
+
+DataMapper::Logger.new(STDOUT,  :debug)
+DataMapper.auto_upgrade!

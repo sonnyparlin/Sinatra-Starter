@@ -2,8 +2,6 @@ require_relative 'appController.rb'
 
 class Website < ApplicationController
   use AssetHandler
-  register Sinatra::Auth
-  register Sinatra::Flash
 
   before do
     set_title

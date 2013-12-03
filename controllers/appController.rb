@@ -1,25 +1,26 @@
 $:.unshift(File.expand_path('../../lib', __FILE__))
 
 require 'sinatra/base'
-require 'sinatra/flash'
-require './sinatra/auth'
 require 'erb'
 require 'pony'
 require 'v8'
 require 'coffee-script'
 require 'asset-handler'
+require "digest/sha1"
+require 'rack-flash'
+require 'sinatra-authentication'
+require 'haml'
 
 class ApplicationController < Sinatra::Base
-  register Sinatra::Flash
-  register Sinatra::Auth
+  register Sinatra::SinatraAuthentication 
+  use Rack::Session::Cookie, :secret => 'All good things comes to those who waits.'
+  use Rack::Flash
   
   helpers ApplicationHelpers
       
   configure do
-    enable :sessions
-    set :username, 'frank'
-    set :password, 'sinatra'
     set :root, File.expand_path('../../',__FILE__)
+    set :erb, :layout_engine => :haml
   end
 
   configure :development do
