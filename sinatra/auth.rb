@@ -16,11 +16,6 @@ module Sinatra
     def self.registered(app)
       app.helpers Helpers
 
-      app.enable :sessions
-
-      app.set :username => 'frank',
-              :password => 'sinatra'
-
       app.get '/login' do
         erb :login
       end
