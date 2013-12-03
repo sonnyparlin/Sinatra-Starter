@@ -1,4 +1,4 @@
-require 'sinatra/base'
+require_relative 'appController.rb'
 
 class SongController < ApplicationController
   enable :method_override

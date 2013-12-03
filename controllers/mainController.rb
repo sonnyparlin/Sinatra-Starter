@@ -1,4 +1,4 @@
-require 'sinatra/base'
+require_relative 'appController.rb'
 
 class Website < ApplicationController
   use AssetHandler
