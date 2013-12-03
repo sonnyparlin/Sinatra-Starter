@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.5)
+    bowtie (0.5.8)
+      sinatra (>= 0.9.4)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -9,6 +11,8 @@ GEM
     daemons (1.1.9)
     data_objects (0.10.13)
       addressable (~> 2.1)
+    dm-aggregates (1.2.0)
+      dm-core (~> 1.2.0)
     dm-core (1.2.1)
       addressable (~> 2.3)
     dm-do-adapter (1.2.0)
@@ -16,12 +20,17 @@ GEM
       dm-core (~> 1.2.0)
     dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
+    dm-pager (1.1.0)
+      dm-aggregates (>= 0.10.1)
+      dm-core (>= 0.10.1)
     dm-postgres-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_postgres (~> 0.10.6)
     dm-sqlite-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_sqlite3 (~> 0.10.6)
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
     do_postgres (0.10.13)
       data_objects (= 0.10.13)
     do_sqlite3 (0.10.13)
@@ -64,11 +73,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bowtie
   coffee-script
+  dm-aggregates
   dm-core
   dm-migrations
+  dm-pager
   dm-postgres-adapter
   dm-sqlite-adapter
+  dm-validations
   pg
   pony
   sass
