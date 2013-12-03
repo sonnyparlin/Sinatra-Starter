@@ -1,3 +1,5 @@
+require 'sinatra/base'
+
 class SongController < ApplicationController
   enable :method_override
 
