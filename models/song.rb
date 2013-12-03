@@ -1,4 +1,4 @@
-require 'sinatra'
+require 'sinatra' if development?
 require 'dm-core'
 require 'dm-migrations'
 require 'dm-sqlite-adapter' if development?
