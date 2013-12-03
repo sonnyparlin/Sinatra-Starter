@@ -1,3 +1,5 @@
+require 'sinatra/base'
+
 class Website < ApplicationController
   use AssetHandler
   register Sinatra::Auth
