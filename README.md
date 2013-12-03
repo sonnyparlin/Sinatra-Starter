@@ -1,4 +1,4 @@
-PadrinoStarter
+Sinatra Starter
 ==============
 
-A starter template for my padrino projects that uses erb, coffeescript and has a basic MVC structure.
+A starter template for my Sinatra projects. Uses erb, coffeescript, scaffolding_extensions and has a basic MVC structure.
