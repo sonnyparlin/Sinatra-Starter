@@ -18,3 +18,4 @@ gem 'bowtie'
 gem "rack-flash3"
 gem 'sinatra-authentication'
 gem 'haml'
+gem 'sinbook'

@@ -8,6 +8,7 @@ require 'coffee-script'
 require 'asset-handler'
 require "digest/sha1"
 require 'rack-flash'
+require 'sinbook'
 require 'sinatra-authentication'
 require 'haml'
 
