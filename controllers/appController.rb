@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
       
   configure do
     set :root, File.expand_path('../../',__FILE__)
-    set :erb, :layout_engine => :haml
+    set :erb, :layout_engine => :haml # Needed by sinatra-authentication, they only recognize a haml layout
   end
 
   configure :development do

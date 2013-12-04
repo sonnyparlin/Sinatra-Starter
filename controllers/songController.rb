@@ -40,6 +40,7 @@ class SongController < ApplicationController
   end
   
   get '/:id/edit' do
+    login_required
     @song = find_song
     erb :edit_song
   end
@@ -53,6 +54,7 @@ class SongController < ApplicationController
   end
   
   put '/:id' do
+    login_required
     song = find_song
     if song.update(params[:song])
       flash[:notice] = "Song successfully updated"
@@ -61,6 +63,7 @@ class SongController < ApplicationController
   end
   
   delete '/:id' do
+    login_required
     if find_song.destroy
       flash[:notice] = "Song deleted"
     end
