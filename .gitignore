@@ -1,2 +1,4 @@
 .DS_Store
 .sass-cache
+development.db-shm
+development.db-wal
