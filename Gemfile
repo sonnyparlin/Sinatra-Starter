@@ -6,7 +6,7 @@ gem "dm-migrations"
 gem "dm-validations"
 gem "dm-aggregates"
 gem "dm-pager"
-gem "thin"
+#gem "thin"
 gem "sinatra-flash"
 gem "pony"
 gem "pg", :group => :production

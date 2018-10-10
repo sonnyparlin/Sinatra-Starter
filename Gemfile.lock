@@ -1,15 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.5)
-    bowtie (0.5.8)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    bowtie (0.5.9)
       sinatra (>= 0.9.4)
-    coffee-script (2.2.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
-    daemons (1.1.9)
-    data_objects (0.10.13)
+    coffee-script-source (1.12.2)
+    data_objects (0.10.17)
       addressable (~> 2.1)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -33,37 +33,46 @@ GEM
       dm-core (~> 1.2.0)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_postgres (0.10.13)
-      data_objects (= 0.10.13)
-    do_sqlite3 (0.10.13)
-      data_objects (= 0.10.13)
-    eventmachine (1.0.3)
-    execjs (2.0.2)
-    haml (4.0.4)
+    do_postgres (0.10.17)
+      data_objects (= 0.10.17)
+    do_sqlite3 (0.10.17)
+      data_objects (= 0.10.17)
+    execjs (2.7.0)
+    ffi (1.9.25)
+    haml (5.0.4)
+      temple (>= 0.8.0)
       tilt
-    libv8 (3.16.14.3)
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
-    mime-types (1.25.1)
-    pg (0.17.0)
-    polyglot (0.3.3)
-    pony (1.6.1)
+    libv8 (3.16.14.19)
+    mail (2.7.0)
+      mini_mime (>= 0.1.1)
+    mini_mime (1.0.1)
+    mustermann (1.0.3)
+    pg (1.1.3)
+    pony (1.12)
       mail (>= 2.0)
-    rack (1.5.2)
+    public_suffix (3.0.3)
+    rack (2.0.5)
     rack-flash (0.1.2)
       rack
     rack-flash3 (1.0.5)
       rack
-    rack-protection (1.5.1)
+    rack-protection (2.0.4)
       rack
-    ref (1.0.5)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     rufus-tokyo (1.0.7)
-    sass (3.2.12)
-    sinatra (1.4.4)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
+    sass (3.6.0)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sinatra (2.0.4)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.4)
+      tilt (~> 2.0)
     sinatra-authentication (0.4.1)
       dm-core
       dm-migrations
@@ -77,18 +86,12 @@ GEM
       sinatra (>= 1.0.0)
     sinbook (0.1.9)
       yajl-ruby
-    therubyracer (0.12.0)
-      libv8 (~> 3.16.14.0)
+    temple (0.8.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
       ref
-    thin (1.6.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 1.0.0)
-      rack (>= 1.0.0)
-    tilt (1.4.1)
-    treetop (1.4.15)
-      polyglot
-      polyglot (>= 0.3.1)
-    yajl-ruby (1.1.0)
+    tilt (2.0.8)
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
@@ -113,4 +116,6 @@ DEPENDENCIES
   sinatra-flash
   sinbook
   therubyracer
-  thin
+
+BUNDLED WITH
+   1.16.6
